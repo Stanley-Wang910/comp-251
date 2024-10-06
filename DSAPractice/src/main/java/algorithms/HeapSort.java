@@ -14,8 +14,6 @@ public class HeapSort {
 
     }
 
-
-
     public void heapSort(int[] arr) {
         BuildMaxHeap(arr);
 
@@ -62,5 +60,4 @@ public class HeapSort {
             maxHeapify(arr, heapSize, largest);
         }
     }
-
 }

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Arrays_Hashing {
 
@@ -66,6 +63,29 @@ public class Arrays_Hashing {
             strMap.get(key).add(s);
         }
         return new ArrayList<>(strMap.values());
+    }
+
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> mySet = new HashSet<>();
+
+        for (int n : nums) {
+            mySet.add(n);
+        }
+
+        int longest = 0;
+
+        for (Integer num : mySet) {
+            if (!mySet.contains(num-1)){
+                int cur = 1;
+                while (mySet.contains(num+1)){
+                    cur ++;
+                    num ++;
+                }
+                longest = Math.max(longest, cur);
+
+            }
+        }
+        return longest;
     }
 }
 
